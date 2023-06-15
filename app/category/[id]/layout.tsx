@@ -9,8 +9,8 @@ const lato = Lato({
 });
 
 export const metadata = {
-  title: "Home | tawk.to Assessment",
-  description: "This is the homepage.",
+  title: "Category | tawk.to Assessment",
+  description: "This is the category page.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
