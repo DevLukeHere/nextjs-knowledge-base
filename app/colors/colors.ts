@@ -4,7 +4,7 @@ const Colors = {
   primary: "#03a84e",
   grey: "#9c9aa6",
   secondaryGrey: "#fafafa",
-  
-}
+  tertiaryGrey: "#eeeeee",
+};
 
 export default Colors;
