@@ -1,11 +1,13 @@
-import Header from "@/app/components/Header";
-import Searchbar from "@/app/components/Searchbar";
+import Header from "../../components/Header";
+import Searchbar from "../../components/Searchbar";
+import SubCategories from "../../components/SubCategories";
 
 export default function Category() {
   return (
     <main>
       <Header />
       <Searchbar />
+      <SubCategories />
     </main>
   );
 }
