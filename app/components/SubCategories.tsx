@@ -16,10 +16,12 @@ const SubCategorySection = styled(Box)((props) => ({
 
   [props.theme.breakpoints.down("lg")]: {
     gridTemplateColumns: "auto auto",
+    columnGap: "0",
   },
 
   [props.theme.breakpoints.down("md")]: {
     gridTemplateColumns: "auto",
+    columnGap: "0",
   },
 }));
 
