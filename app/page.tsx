@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Colors from "./colors/colors";
 import Searchbar from "./components/Searchbar";
+import CategoryCard from "./components/CategoryCard";
 
 export default function Home() {
   return (
@@ -35,6 +36,19 @@ export default function Home() {
         </Typography>
       </Box>
       <Searchbar />
+      <Box
+        sx={{
+          backgroundColor: Colors.secondaryGrey,
+          paddingTop: "3.75rem",
+          paddingBottom: "6.25rem",
+          display: "grid",
+          gridTemplateColumns: "auto auto auto",
+          gridTemplateRows: "auto auto",
+          rowGap: "1.25rem",
+        }}
+      >
+        <CategoryCard />
+      </Box>
     </main>
   );
 }
