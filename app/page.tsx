@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Colors from "./colors/colors";
+import Searchbar from "./components/Searchbar";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
           Everything you need to manage your messaging
         </Typography>
       </Box>
+      <Searchbar />
     </main>
   );
 }
