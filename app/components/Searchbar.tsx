@@ -2,9 +2,9 @@
 
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { styled } from "@mui/material/styles";
-import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Colors from "../colors/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +33,7 @@ export default function Searchbar() {
           label="Search for answers"
           variant="outlined"
         />
-        <IconButton
+        <Button
           sx={{
             backgroundColor: Colors.primary,
             width: "5rem",
@@ -46,8 +46,11 @@ export default function Searchbar() {
             },
           }}
         >
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </IconButton>
+          <FontAwesomeIcon
+            style={{ width: "1.25rem", height: "1.25rem" }}
+            icon={faMagnifyingGlass}
+          />
+        </Button>
       </Box>
     </ContainerStyled>
   );
