@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
 import Colors from "../colors/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -25,27 +26,29 @@ export default function Searchbar() {
 
   return (
     <ContainerStyled>
-      <TextFieldStyled
-        sx={{ width: "45rem" }}
-        id="search-bar"
-        label="Search for answers"
-        variant="outlined"
-      />
-      <IconButton
-        sx={{
-          backgroundColor: Colors.primary,
-          width: "5rem",
-          height: "3.5rem",
-          borderRadius: "0 0.25rem 0.25rem 0",
-          color: Colors.white,
-
-          ":hover": {
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <TextFieldStyled
+          sx={{ width: "45rem" }}
+          id="search-bar"
+          label="Search for answers"
+          variant="outlined"
+        />
+        <IconButton
+          sx={{
             backgroundColor: Colors.primary,
-          },
-        }}
-      >
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-      </IconButton>
+            width: "5rem",
+            height: "3.5rem",
+            borderRadius: "0 0.25rem 0.25rem 0",
+            color: Colors.white,
+
+            ":hover": {
+              backgroundColor: Colors.primary,
+            },
+          }}
+        >
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </IconButton>
+      </Box>
     </ContainerStyled>
   );
 }
