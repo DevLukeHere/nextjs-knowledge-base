@@ -75,7 +75,7 @@ export default function CategoryCard() {
 
       {/* Chat Widget Card */}
       <BoxStyled>
-        <Image src={MessageIcon} width={55} height={55} alt="play icon" />
+        <Image src={MessageIcon} width={55} height={55} alt="chat icon" />
         <Typography
           sx={{
             textTransform: "capitalize",
@@ -96,7 +96,7 @@ export default function CategoryCard() {
 
       {/* Using Dashboard Card */}
       <BoxStyled>
-        <Image src={MonitorIcon} width={55} height={55} alt="play icon" />
+        <Image src={MonitorIcon} width={55} height={55} alt="monitor icon" />
         <Typography
           sx={{
             textTransform: "capitalize",
@@ -117,7 +117,7 @@ export default function CategoryCard() {
 
       {/* Advanced Features Card */}
       <BoxStyled>
-        <Image src={DiamondIcon} width={55} height={55} alt="play icon" />
+        <Image src={DiamondIcon} width={55} height={55} alt="diamond icon" />
         <Typography
           sx={{
             textTransform: "capitalize",
@@ -138,7 +138,7 @@ export default function CategoryCard() {
 
       {/* Integrations Card */}
       <BoxStyled>
-        <Image src={LinkIcon} width={55} height={55} alt="play icon" />
+        <Image src={LinkIcon} width={55} height={55} alt="link icon" />
         <Typography
           sx={{
             textTransform: "capitalize",
@@ -159,7 +159,12 @@ export default function CategoryCard() {
 
       {/* E-commerce Card */}
       <BoxStyled>
-        <Image src={ShoppingCartIcon} width={44} height={55} alt="play icon" />
+        <Image
+          src={ShoppingCartIcon}
+          width={44}
+          height={55}
+          alt="shopping cart icon"
+        />
         <Typography
           sx={{
             textTransform: "capitalize",
