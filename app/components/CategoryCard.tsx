@@ -24,6 +24,7 @@ const BoxStyled = styled(Container)({
   width: "19.75rem",
   height: "13.75rem",
   cursor: "pointer",
+  border: `1px solid ${Colors.tertiaryGrey}`
 });
 
 const CategoryCardSection = styled(Box)((props) => ({
