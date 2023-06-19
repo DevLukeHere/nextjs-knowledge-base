@@ -1,7 +1,7 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { styled } from "@mui/material/styles";
+import styled from "@mui/material/styles/styled";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
