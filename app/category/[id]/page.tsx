@@ -1,7 +1,11 @@
+import Header from "@/app/components/Header";
+import Searchbar from "@/app/components/Searchbar";
+
 export default function Category() {
   return (
     <main>
-      <h1>This is the category page!</h1>
+      <Header />
+      <Searchbar />
     </main>
   );
 }

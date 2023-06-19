@@ -15,7 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body
+        style={{ margin: "0", padding: "0", boxSizing: "border-box" }}
+        className={lato.className}
+      >
+        {children}
+      </body>
     </html>
   );
 }
