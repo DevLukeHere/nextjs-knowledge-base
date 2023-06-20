@@ -1,34 +1,12 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import styled from "@mui/material/styles/styled";
-import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
+import { ContainerStyled, TextFieldStyled } from "./styles/Searchbar.styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Colors from "../colors/colors";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
-const ContainerStyled = styled(Container)({
-  paddingBottom: "4.75rem",
-  textAlign: "center",
-});
-
-const TextFieldStyled = styled(TextField)({
-  ".MuiInputBase-root": {
-    borderRadius: "0.25rem 0 0 0.25rem",
-  },
-
-  ".Mui-focused": {
-    color: Colors.primary,
-    borderColor: Colors.primary,
-  },
-
-  ".MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-    borderColor: Colors.primary,
-  },
-});
 
 export default function Searchbar() {
   // const dispatch = useAppDispatch();

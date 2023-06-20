@@ -1,16 +1,14 @@
 "use client";
 
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Colors from "../colors/colors";
+import { BoxStyled } from "./styles/Breadcrumbs.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import Typography from "@mui/material/Typography";
+import Colors from "../colors/colors";
 
 export default function Breadcrumbs() {
   return (
-    <Box
-      sx={{ backgroundColor: Colors.secondaryGrey, padding: "1.25rem 4rem" }}
-    >
+    <BoxStyled>
       <Typography
         sx={{ color: Colors.primary, fontWeight: "400" }}
         variant="caption"
@@ -36,6 +34,6 @@ export default function Breadcrumbs() {
       >
         getting started
       </Typography>
-    </Box>
+    </BoxStyled>
   );
 }

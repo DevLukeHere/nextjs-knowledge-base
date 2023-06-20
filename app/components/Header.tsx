@@ -1,12 +1,12 @@
 "use client";
 
+import { BoxStyled } from "./styles/Header.styles";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 import Colors from "../colors/colors";
 
 export default function Header() {
   return (
-    <Box sx={{ paddingTop: "3.5rem", paddingBottom: "2.5rem" }}>
+    <BoxStyled>
       <Typography
         sx={{
           fontWeight: "700",
@@ -32,6 +32,6 @@ export default function Header() {
       >
         Everything you need to manage your messaging
       </Typography>
-    </Box>
+    </BoxStyled>
   );
 }

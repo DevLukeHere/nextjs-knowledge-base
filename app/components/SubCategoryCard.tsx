@@ -1,30 +1,18 @@
 "use client";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileLines, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { Fragment } from "react";
+import { BoxStyled } from "./styles/SubCategoryCard.styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Colors from "../colors/colors";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileLines, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { Fragment } from "react";
 
 export default function SubCategoryCard() {
   return (
     <Fragment>
-      <Box
-        sx={{
-          borderRadius: "0.25rem",
-          border: `1px solid ${Colors.tertiaryGrey}`,
-          padding: "1.25rem 2.5rem",
-          backgroundColor: Colors.white,
-          display: "grid",
-          gridTemplateColumns: "auto 1fr auto",
-          columnGap: "1.75rem",
-          alignItems: "center",
-          height: "fit-content",
-          marginBottom: "1rem",
-        }}
-      >
+      <BoxStyled>
         <FontAwesomeIcon
           style={{ color: Colors.primary, width: "1.25rem", height: "1.25rem" }}
           icon={faFileLines}
@@ -49,7 +37,7 @@ export default function SubCategoryCard() {
             icon={faChevronRight}
           />
         </IconButton>
-      </Box>
+      </BoxStyled>
     </Fragment>
   );
 }
