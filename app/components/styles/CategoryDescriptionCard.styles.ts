@@ -9,6 +9,7 @@ export const BoxStyled = styled(Box)((props) => ({
   textAlign: "center",
   width: "17.5rem",
   border: `1px solid ${Colors.tertiaryGrey}`,
+  height: "fit-content",
 
   [props.theme.breakpoints.down("md")]: {
     marginBottom: "2rem",

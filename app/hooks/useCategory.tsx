@@ -1,11 +1,11 @@
 import useSWR from "swr";
 import axios from "axios";
 
-export default function useCategory(categoryId: string) {
+export default function useCategory() {
   const fetcher = (url: string) =>
-    axios.get(url).then((response) => response.data);
-  const { data, error, isLoading, isValidating } = useSWR(
-    `http://localhost:3000/api/category/${categoryId}`,
+    axios.get(url).then((response) => response.data.articles);
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:3000/api/categories/`,
     fetcher,
     {
       revalidateIfStale: false,
@@ -17,7 +17,6 @@ export default function useCategory(categoryId: string) {
   return {
     articles: data,
     isLoading,
-    isValidating,
     isError: error,
   };
 }

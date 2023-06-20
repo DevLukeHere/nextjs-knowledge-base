@@ -1,6 +1,7 @@
 import styled from "@mui/material/styles/styled";
 import Colors from "../../colors/colors";
 import Box from "@mui/material/Box";
+import Skeleton from "@mui/material/Skeleton";
 
 export const BoxStyled = styled(Box)((props) => ({
   borderRadius: "0.25rem",
@@ -12,5 +13,10 @@ export const BoxStyled = styled(Box)((props) => ({
   columnGap: "1.75rem",
   alignItems: "center",
   height: "fit-content",
+  marginBottom: "1rem",
+}));
+
+export const SkeletonStyled = styled(Skeleton)((props) => ({
+  borderRadius: "0.25rem",
   marginBottom: "1rem",
 }));
