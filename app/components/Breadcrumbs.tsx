@@ -8,7 +8,9 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Breadcrumbs() {
   return (
-    <Box>
+    <Box
+      sx={{ backgroundColor: Colors.secondaryGrey, padding: "1.25rem 4rem" }}
+    >
       <Typography
         sx={{ color: Colors.primary, fontWeight: "400" }}
         variant="caption"

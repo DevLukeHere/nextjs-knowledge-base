@@ -4,10 +4,10 @@ import SubCategories from "../../components/SubCategories";
 
 export default function Category() {
   return (
-    <main>
+    <section>
       <Header />
       <Searchbar />
       <SubCategories />
-    </main>
+    </section>
   );
 }

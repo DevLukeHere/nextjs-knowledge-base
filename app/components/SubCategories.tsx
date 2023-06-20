@@ -6,10 +6,11 @@ import Colors from "../colors/colors";
 import SubCategoryCard from "./SubCategoryCard";
 import CategoryDescriptionCard from "./CategoryDescriptionCard";
 import Breadcrumbs from "./Breadcrumbs";
+import { Fragment } from "react";
 
 const SubCategorySection = styled(Box)((props) => ({
   backgroundColor: Colors.secondaryGrey,
-  padding: "3.75rem 4rem 6.25rem 4rem",
+  padding: "0 4rem 6.25rem 4rem",
   display: "grid",
   gridTemplateColumns: "auto 1fr",
   columnGap: "3.75rem",
@@ -27,10 +28,12 @@ const SubCategorySection = styled(Box)((props) => ({
 
 export default function SubCategories() {
   return (
-    <SubCategorySection>
-      {/* <Breadcrumbs /> */}
-      <CategoryDescriptionCard />
-      <SubCategoryCard />
-    </SubCategorySection>
+    <Fragment>
+      <Breadcrumbs />
+      <SubCategorySection>
+        <CategoryDescriptionCard />
+        <SubCategoryCard />
+      </SubCategorySection>
+    </Fragment>
   );
 }
