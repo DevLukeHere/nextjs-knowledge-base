@@ -19,6 +19,15 @@ const TextFieldStyled = styled(TextField)({
   ".MuiInputBase-root": {
     borderRadius: "0.25rem 0 0 0.25rem",
   },
+
+  ".Mui-focused": {
+    color: Colors.primary,
+    borderColor: Colors.primary,
+  },
+
+  ".MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    borderColor: Colors.primary,
+  },
 });
 
 export default function Searchbar() {
