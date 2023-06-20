@@ -1,14 +1,11 @@
 import useSWR from "swr";
 import axios from "axios";
 
-type authorId = string;
-type url = string;
-
-export default function useAuthor(authorId: authorId) {
-  const fetcher = (url: url) =>
+export default function useAuthor(authorId: string) {
+  const fetcher = (url: string) =>
     axios.get(url).then((response) => response.data);
   const { data, error, isLoading, isValidating } = useSWR(
-    `http://localhost:9000/api/author/${authorId}`,
+    `http://localhost:3000/api/author/${authorId}`,
     fetcher,
     {
       revalidateIfStale: false,

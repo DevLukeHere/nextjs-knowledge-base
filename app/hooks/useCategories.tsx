@@ -6,7 +6,7 @@ export default function useCategories() {
     axios.get(url).then((response) => response.data.categories);
 
   const { data, error, isLoading, isValidating } = useSWR(
-    `http://localhost:3000/api/articles`,
+    `http://localhost:3000/api/categories`,
     fetcher,
     {
       revalidateIfStale: false,
