@@ -1,13 +1,13 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import useCategories from "../hooks/useCategories";
+import dayjs from "dayjs";
 import styled from "@mui/material/styles/styled";
-import useTheme from "@mui/material/styles/useTheme";
 import Container from "@mui/material/Container";
 import Colors from "../colors/colors";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Image from "next/image";
 import PlayIcon from "../../public/images/play.svg";
 import DiamondIcon from "../../public/images/diamond.svg";
@@ -24,7 +24,7 @@ const BoxStyled = styled(Container)({
   width: "19.75rem",
   height: "13.75rem",
   cursor: "pointer",
-  border: `1px solid ${Colors.tertiaryGrey}`
+  border: `1px solid ${Colors.tertiaryGrey}`,
 });
 
 const CategoryCardSection = styled(Box)((props) => ({
@@ -48,141 +48,33 @@ const CategoryCardSection = styled(Box)((props) => ({
 
 export default function CategoryCard() {
   // const dispatch = useAppDispatch();
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("lg"));
+  const { categories, isLoading, isValidating } = useCategories();
+
+  console.log("categories:", categories);
 
   return (
     <CategoryCardSection>
-      {/* Getting Started Card */}
-      <BoxStyled>
-        <Image src={PlayIcon} width={44} height={55} alt="play icon" />
-        <Typography
-          sx={{
-            textTransform: "capitalize",
-            color: Colors.black,
-            marginBottom: "1.25rem",
-          }}
-          variant="h6"
-        >
-          getting started
-        </Typography>
-        <Typography sx={{ color: Colors.primary }} variant="body2">
-          5 articles
-        </Typography>
-        <Typography sx={{ color: Colors.primaryGrey }} variant="caption">
-          Last update 2 days ago
-        </Typography>
-      </BoxStyled>
-
-      {/* Chat Widget Card */}
-      <BoxStyled>
-        <Image src={MessageIcon} width={55} height={55} alt="chat icon" />
-        <Typography
-          sx={{
-            textTransform: "capitalize",
-            color: Colors.black,
-            marginBottom: "1.25rem",
-          }}
-          variant="h6"
-        >
-          chat widget customization
-        </Typography>
-        <Typography sx={{ color: Colors.primary }} variant="body2">
-          9 articles
-        </Typography>
-        <Typography sx={{ color: Colors.primaryGrey }} variant="caption">
-          Last update 2 days ago
-        </Typography>
-      </BoxStyled>
-
-      {/* Using Dashboard Card */}
-      <BoxStyled>
-        <Image src={MonitorIcon} width={55} height={55} alt="monitor icon" />
-        <Typography
-          sx={{
-            textTransform: "capitalize",
-            color: Colors.black,
-            marginBottom: "1.25rem",
-          }}
-          variant="h6"
-        >
-          using the dashboard
-        </Typography>
-        <Typography sx={{ color: Colors.primary }} variant="body2">
-          12 articles
-        </Typography>
-        <Typography sx={{ color: Colors.primaryGrey }} variant="caption">
-          Last update 2 days ago
-        </Typography>
-      </BoxStyled>
-
-      {/* Advanced Features Card */}
-      <BoxStyled>
-        <Image src={DiamondIcon} width={55} height={55} alt="diamond icon" />
-        <Typography
-          sx={{
-            textTransform: "capitalize",
-            color: Colors.black,
-            marginBottom: "1.25rem",
-          }}
-          variant="h6"
-        >
-          advanced features
-        </Typography>
-        <Typography sx={{ color: Colors.primary }} variant="body2">
-          5 articles
-        </Typography>
-        <Typography sx={{ color: Colors.primaryGrey }} variant="caption">
-          Last update 2 days ago
-        </Typography>
-      </BoxStyled>
-
-      {/* Integrations Card */}
-      <BoxStyled>
-        <Image src={LinkIcon} width={55} height={55} alt="link icon" />
-        <Typography
-          sx={{
-            textTransform: "capitalize",
-            color: Colors.black,
-            marginBottom: "1.25rem",
-          }}
-          variant="h6"
-        >
-          integrations
-        </Typography>
-        <Typography sx={{ color: Colors.primary }} variant="body2">
-          14 articles
-        </Typography>
-        <Typography sx={{ color: Colors.primaryGrey }} variant="caption">
-          Last update 2 days ago
-        </Typography>
-      </BoxStyled>
-
-      {/* E-commerce Card */}
-      <BoxStyled>
-        <Image
-          src={ShoppingCartIcon}
-          width={44}
-          height={55}
-          alt="shopping cart icon"
-        />
-        <Typography
-          sx={{
-            textTransform: "capitalize",
-            color: Colors.black,
-            marginBottom: "1.25rem",
-          }}
-          variant="h6"
-        >
-          e-commerce integrations
-        </Typography>
-        <Typography sx={{ color: Colors.primary }} variant="body2">
-          10 articles
-        </Typography>
-        <Typography sx={{ color: Colors.primaryGrey }} variant="caption">
-          Last update 2 days ago
-        </Typography>
-      </BoxStyled>
+      {categories?.map((category: any) => (
+        <BoxStyled key={category.id}>
+          <Image src={PlayIcon} width={44} height={55} alt="play icon" />
+          <Typography
+            sx={{
+              textTransform: "capitalize",
+              color: Colors.black,
+              marginBottom: "1.25rem",
+            }}
+            variant="h6"
+          >
+            {category.title}
+          </Typography>
+          <Typography sx={{ color: Colors.primary }} variant="body2">
+            {category.totalArticle} articles
+          </Typography>
+          <Typography sx={{ color: Colors.primaryGrey }} variant="caption">
+            Last updated {dayjs(category.updatedOn).format("DD/MM/YYYY")}
+          </Typography>
+        </BoxStyled>
+      ))}
     </CategoryCardSection>
   );
 }
