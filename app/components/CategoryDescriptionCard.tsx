@@ -7,41 +7,44 @@ import {
   DividerStyled,
   DescriptionText,
   FontAwesomeIconStyled,
+  SkeletonStyled,
 } from "./styles/CategoryDescriptionCard.styles";
-import { useAppSelector } from "../redux/hooks";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import useCategory from "../hooks/useCategory";
 import Image from "next/image";
 import dayjs from "dayjs";
+import { Fragment } from "react";
 
 dayjs.extend(require("dayjs/plugin/relativeTime"));
 
 export default function CategoryDescriptionCard() {
-  // const category = useAppSelector(
-  //   (state) => state.categoryReducer.currentCategory
-  // );
-  const { category, isLoading } = useCategory();
-  const router = useRouter()
-
-  console.log("category:", category);
-  console.log("router:", router);
+  const router = useParams();
+  const { category, isLoading } = useCategory(router.id);
 
   return (
-    <BoxStyled>
-      <Image
-        src={`/images/${category?.icon}.svg`}
-        width={55}
-        height={55}
-        alt={`${category?.icon} icon`}
-      />
-      <TitleText variant="h5">{category?.title}</TitleText>
-      <UpdatedText variant="caption">
-        Updated {dayjs(category?.updatedOn).fromNow()}
-      </UpdatedText>
-      <DividerStyled></DividerStyled>
-      <FontAwesomeIconStyled icon={faCircleInfo} />
-      <DescriptionText variant="body2">{category?.description}</DescriptionText>
-    </BoxStyled>
+    <Fragment>
+      {isLoading ? (
+        <SkeletonStyled variant="rectangular" />
+      ) : (
+        <BoxStyled>
+          <Image
+            src={`/images/${category?.icon}.svg`}
+            width={55}
+            height={55}
+            alt={`${category?.icon} icon`}
+          />
+          <TitleText variant="h5">{category?.title}</TitleText>
+          <UpdatedText variant="caption">
+            Updated {dayjs(category?.updatedOn).fromNow()}
+          </UpdatedText>
+          <DividerStyled></DividerStyled>
+          <FontAwesomeIconStyled icon={faCircleInfo} />
+          <DescriptionText variant="body2">
+            {category?.description}
+          </DescriptionText>
+        </BoxStyled>
+      )}
+    </Fragment>
   );
 }
