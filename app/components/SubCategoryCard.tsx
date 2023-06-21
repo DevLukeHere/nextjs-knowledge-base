@@ -14,6 +14,13 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import useArticles from "../hooks/useArticles";
 
+interface articleType {
+  status: string;
+  id: string;
+  title: string;
+  updatedOn: string;
+}
+
 export default function SubCategoryCard() {
   const { articles, isLoading } = useArticles();
 
@@ -28,8 +35,8 @@ export default function SubCategoryCard() {
         </Fragment>
       ) : (
         articles
-          ?.filter((article: any) => article.status === "published")
-          .map((article: any) => (
+          ?.filter((article: articleType) => article.status === "published")
+          .map((article: articleType) => (
             <BoxStyled key={article?.id}>
               <FontAwesomeIconStyled icon={faFileLines} />
               <Box>

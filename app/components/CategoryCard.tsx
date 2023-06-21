@@ -17,6 +17,22 @@ import Image from "next/image";
 
 dayjs.extend(require("dayjs/plugin/relativeTime"));
 
+interface categoryType {
+  enabled: boolean;
+  title: string;
+  id: string;
+  icon: string;
+  totalArticle: number;
+  updatedOn: string;
+}
+
+interface aType {
+  order: number;
+}
+interface bType {
+  order: number;
+}
+
 export default function CategoryCard() {
   const { categories, isLoading } = useCategories();
 
@@ -33,16 +49,16 @@ export default function CategoryCard() {
         </Fragment>
       ) : (
         categories
-          ?.filter((category: any) => category.enabled === true)
-          .sort((a: any, b: any) => a.order - b.order)
-          .map((category: any) => (
+          ?.filter((category: categoryType) => category?.enabled === true)
+          .sort((a: aType, b: bType) => a.order - b.order)
+          .map((category: categoryType) => (
             <LinkStyled key={category?.id} href={`/category/${category?.id}`}>
               <BoxStyled key={category?.id}>
                 <Image
                   src={`/images/${category?.icon}.svg`}
                   width={50}
                   height={55}
-                  alt={`${category.icon} icon`}
+                  alt={`${category?.icon} icon`}
                 />
                 <TitleText>{category?.title}</TitleText>
                 <SubtitleText>{category?.totalArticle} articles</SubtitleText>
