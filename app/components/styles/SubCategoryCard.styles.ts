@@ -35,6 +35,6 @@ export const UpdatedAtText = styled(Typography)((props) => ({
 
 export const FontAwesomeIconStyled = styled(FontAwesomeIcon)((props) => ({
   color: Colors.primary,
-  width: "1.25rem",
-  height: "1.25rem",
+  width: "1.5rem",
+  height: "1.5rem",
 }));

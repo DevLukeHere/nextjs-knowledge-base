@@ -14,6 +14,8 @@ export const FontAwesomeIconStyled = styled(FontAwesomeIcon)({
 export const BoxStyled = styled(Box)({
   backgroundColor: Colors.secondaryGrey,
   padding: "1.25rem 4rem",
+  display: "flex",
+  alignItems: "center",
 });
 
 export const MainCategoryText = styled(Typography)({
