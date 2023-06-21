@@ -26,12 +26,14 @@ export const TitleText = styled("h6")((props) => ({
   color: Colors.black,
   fontWeight: "400",
   fontSize: "1.25rem",
+  margin: "0",
 }));
 
 export const UpdatedAtText = styled("p")((props) => ({
   color: Colors.primaryGrey,
   fontWeight: "400",
   fontSize: "0.75rem",
+  marginTop: "0.25rem"
 }));
 
 export const FontAwesomeIconStyled = styled(FontAwesomeIcon)((props) => ({
