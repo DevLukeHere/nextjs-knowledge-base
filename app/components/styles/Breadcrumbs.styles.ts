@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "@mui/material/styles/styled";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Colors from "../../colors/colors";
 
 export const FontAwesomeIconStyled = styled(FontAwesomeIcon)({
@@ -18,13 +17,15 @@ export const BoxStyled = styled(Box)({
   alignItems: "center",
 });
 
-export const MainCategoryText = styled(Typography)({
+export const MainCategoryText = styled("p")({
   color: Colors.primary,
   fontWeight: "400",
+  fontSize: "0.75rem"
 });
 
-export const SubCategoryText = styled(Typography)({
+export const SubCategoryText = styled("p")({
   color: Colors.primaryGrey,
   fontWeight: "400",
   textTransform: "capitalize",
+  fontSize: "0.75rem"
 });

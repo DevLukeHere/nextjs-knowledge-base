@@ -34,15 +34,13 @@ export default function CategoryDescriptionCard() {
             height={55}
             alt={`${category?.icon} icon`}
           />
-          <TitleText variant="h5">{category?.title}</TitleText>
-          <UpdatedText variant="caption">
+          <TitleText>{category?.title}</TitleText>
+          <UpdatedText>
             Updated {dayjs(category?.updatedOn).fromNow()}
           </UpdatedText>
           <DividerStyled></DividerStyled>
           <FontAwesomeIconStyled icon={faCircleInfo} />
-          <DescriptionText variant="body2">
-            {category?.description}
-          </DescriptionText>
+          <DescriptionText>{category?.description}</DescriptionText>
         </BoxStyled>
       )}
     </Fragment>

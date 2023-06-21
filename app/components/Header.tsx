@@ -5,10 +5,10 @@ import { BoxStyled, TitleText, SubtitleText } from "./styles/Header.styles";
 export default function Header() {
   return (
     <BoxStyled>
-      <TitleText variant="h4">
+      <TitleText>
         Knowledge base does not have to be boring
       </TitleText>
-      <SubtitleText variant="h6">
+      <SubtitleText>
         Everything you need to manage your messaging
       </SubtitleText>
     </BoxStyled>

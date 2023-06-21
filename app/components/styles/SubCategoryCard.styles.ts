@@ -3,7 +3,6 @@ import styled from "@mui/material/styles/styled";
 import Colors from "../../colors/colors";
 import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
-import Typography from "@mui/material/Typography";
 
 export const BoxStyled = styled(Box)((props) => ({
   borderRadius: "0.25rem",
@@ -23,14 +22,16 @@ export const SkeletonStyled = styled(Skeleton)((props) => ({
   marginBottom: "1rem",
 }));
 
-export const TitleText = styled(Typography)((props) => ({
+export const TitleText = styled("h6")((props) => ({
   color: Colors.black,
   fontWeight: "400",
+  fontSize: "1.25rem",
 }));
 
-export const UpdatedAtText = styled(Typography)((props) => ({
+export const UpdatedAtText = styled("p")((props) => ({
   color: Colors.primaryGrey,
   fontWeight: "400",
+  fontSize: "0.75rem",
 }));
 
 export const FontAwesomeIconStyled = styled(FontAwesomeIcon)((props) => ({

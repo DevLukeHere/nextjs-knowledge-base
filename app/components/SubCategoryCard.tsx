@@ -33,8 +33,8 @@ export default function SubCategoryCard() {
             <BoxStyled key={article?.id}>
               <FontAwesomeIconStyled icon={faFileLines} />
               <Box>
-                <TitleText variant="h6">{article?.title}</TitleText>
-                <UpdatedAtText variant="caption">
+                <TitleText>{article?.title}</TitleText>
+                <UpdatedAtText>
                   Updated {dayjs(article?.updatedOn).format("MMM, DD YYYY")}
                 </UpdatedAtText>
               </Box>

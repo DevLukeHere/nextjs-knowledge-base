@@ -11,9 +11,9 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 export default function Breadcrumbs() {
   return (
     <BoxStyled>
-      <MainCategoryText variant="caption">All categories</MainCategoryText>
+      <MainCategoryText>All categories</MainCategoryText>
       <FontAwesomeIconStyled icon={faChevronRight} />
-      <SubCategoryText variant="caption">Getting Started</SubCategoryText>
+      <SubCategoryText>Getting Started</SubCategoryText>
     </BoxStyled>
   );
 }
