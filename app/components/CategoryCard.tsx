@@ -20,8 +20,6 @@ dayjs.extend(require("dayjs/plugin/relativeTime"));
 export default function CategoryCard() {
   const { categories, isLoading } = useCategories();
 
-  // console.log("categories:", categories);
-
   return (
     <CategoryCardSection>
       {isLoading ? (

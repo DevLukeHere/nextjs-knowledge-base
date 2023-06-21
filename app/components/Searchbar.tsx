@@ -1,6 +1,5 @@
 "use client";
 
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import {
   ContainerStyled,
   TextFieldStyled,
@@ -11,7 +10,6 @@ import {
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Searchbar() {
-  // const dispatch = useAppDispatch();
 
   return (
     <ContainerStyled>

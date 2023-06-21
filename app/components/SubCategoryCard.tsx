@@ -17,8 +17,6 @@ import useArticles from "../hooks/useArticles";
 export default function SubCategoryCard() {
   const { articles, isLoading } = useArticles();
 
-  // console.log("articles:", articles);
-
   return (
     <Box>
       {isLoading ? (

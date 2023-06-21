@@ -11,10 +11,10 @@ import {
 } from "./styles/CategoryDescriptionCard.styles";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "next/navigation";
+import { Fragment } from "react";
 import useCategory from "../hooks/useCategory";
 import Image from "next/image";
 import dayjs from "dayjs";
-import { Fragment } from "react";
 
 dayjs.extend(require("dayjs/plugin/relativeTime"));
 
