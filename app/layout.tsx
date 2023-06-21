@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Lato } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { Providers } from "./redux/provider";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         style={{ margin: "0", padding: "0", boxSizing: "border-box" }}
         className={lato.className}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

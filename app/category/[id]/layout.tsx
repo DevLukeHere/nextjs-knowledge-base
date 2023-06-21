@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Lato } from "next/font/google";
+import { Providers } from "../../redux/provider";
 
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         style={{ margin: "0", padding: "0", boxSizing: "border-box" }}
         className={lato.className}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

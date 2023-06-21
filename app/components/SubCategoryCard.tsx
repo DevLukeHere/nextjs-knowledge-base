@@ -9,13 +9,13 @@ import {
   TitleText,
   UpdatedAtText,
 } from "./styles/SubCategoryCard.styles";
-import useCategory from "../hooks/useCategory";
 import dayjs from "dayjs";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
+import useArticles from "../hooks/useArticles";
 
 export default function SubCategoryCard() {
-  const { articles, isLoading } = useCategory();
+  const { articles, isLoading } = useArticles();
 
   // console.log("articles:", articles);
 

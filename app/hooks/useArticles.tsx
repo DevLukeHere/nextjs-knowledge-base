@@ -1,15 +1,11 @@
 import useSWR from "swr";
 import axios from "axios";
 
-export default function useCategory(id?: string) {
+export default function useArticles() {
   const fetcher = (url: string) =>
-    axios
-      .get(url)
-      .then((response) =>
-        response.data.categories.find((category: any) => category.id === id)
-      );
+    axios.get(url).then((response) => response.data.articles);
   const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api/category/`,
+    `http://localhost:3000/api/articles/`,
     fetcher,
     {
       revalidateIfStale: false,
@@ -19,7 +15,7 @@ export default function useCategory(id?: string) {
   );
 
   return {
-    category: data,
+    articles: data,
     isLoading,
     isError: error,
   };

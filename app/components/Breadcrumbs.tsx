@@ -13,7 +13,7 @@ export default function Breadcrumbs() {
     <BoxStyled>
       <MainCategoryText variant="caption">All categories</MainCategoryText>
       <FontAwesomeIconStyled icon={faChevronRight} />
-      <SubCategoryText variant="caption">getting started</SubCategoryText>
+      <SubCategoryText variant="caption">Getting Started</SubCategoryText>
     </BoxStyled>
   );
 }
