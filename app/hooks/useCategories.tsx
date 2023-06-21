@@ -4,9 +4,8 @@ import axios from "axios";
 export default function useCategories() {
   const fetcher = (url: string) =>
     axios.get(url).then((response) => response.data.categories);
-
-  const { data, error, isLoading, isValidating } = useSWR(
-    `http://localhost:3000/api/categories`,
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:3000/api/categories/`,
     fetcher,
     {
       revalidateIfStale: false,
@@ -18,7 +17,6 @@ export default function useCategories() {
   return {
     categories: data,
     isLoading,
-    isValidating,
     isError: error,
   };
 }

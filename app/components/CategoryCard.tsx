@@ -10,7 +10,10 @@ import {
   TitleText,
   SubtitleText,
 } from "./styles/CategoryCard.styles";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { setCurrentCategory } from "../redux/features/categorySlice";
 import "dayjs/plugin/relativeTime";
+import { useRouter } from "next/router";
 import useCategories from "../hooks/useCategories";
 import dayjs from "dayjs";
 import Image from "next/image";
@@ -19,6 +22,8 @@ dayjs.extend(require("dayjs/plugin/relativeTime"));
 
 export default function CategoryCard() {
   const { categories, isLoading } = useCategories();
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
   // console.log("categories:", categories);
 
