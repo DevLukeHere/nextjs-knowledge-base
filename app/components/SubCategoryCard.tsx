@@ -1,7 +1,8 @@
 "use client";
 
 import { Fragment } from "react";
-import { faFileLines, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import {
   BoxStyled,
   FontAwesomeIconStyled,
